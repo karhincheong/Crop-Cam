@@ -16,8 +16,8 @@ model = keras.load_model("keras_Model.h5", compile=False)
 while True:
     output = classification(model, cam)
     if output[0] == "Normal":
-        arduino.write(f"{11}{output[1] * 255}".encode())
+        arduino.write("a".encode())
     elif output[0] == "Dry":
-        arduino.write(f"{10}{output[1] * 255}".encode())
+        arduino.write("b".encode())
     elif output[0] == "Diseased":
-        arduino.write(f"{9}{output[1] * 255}".encode())
+        arduino.write("c".encode())
